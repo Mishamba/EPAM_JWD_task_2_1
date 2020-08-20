@@ -1,44 +1,15 @@
-package com.mishamba.day6.model;
+package com.mishamba.day1.model;
 
-import com.mishamba.day6.model.configuration.TablePCColor;
+import com.mishamba.day1.model.configuration.TablePCColor;
 
-public class TablePC extends Entity {
-    private int batteryCapacity;
-    private int displayInches;
-    private int memoryRom;
+public class TablePC extends Computer {
     private int flashMemoryCapacity;
     private TablePCColor color;
 
     public TablePC(int batteryCapacity, int displayInches, int memoryRom, int flashMemoryCapacity, TablePCColor color) {
-        this.batteryCapacity = batteryCapacity;
-        this.displayInches = displayInches;
-        this.memoryRom = memoryRom;
+        super(displayInches, memoryRom, batteryCapacity);
         this.flashMemoryCapacity = flashMemoryCapacity;
         this.color = color;
-    }
-
-    public int getBatteryCapacity() {
-        return batteryCapacity;
-    }
-
-    public void setBatteryCapacity(int batteryCapacity) {
-        this.batteryCapacity = batteryCapacity;
-    }
-
-    public int getDisplayInches() {
-        return displayInches;
-    }
-
-    public void setDisplayInches(int displayInches) {
-        this.displayInches = displayInches;
-    }
-
-    public int getMemoryRom() {
-        return memoryRom;
-    }
-
-    public void setMemoryRom(int memoryRom) {
-        this.memoryRom = memoryRom;
     }
 
     public int getFlashMemoryCapacity() {
@@ -84,9 +55,10 @@ public class TablePC extends Entity {
         int hash;
         int prime = 36;
 
-        hash = (batteryCapacity * prime) + batteryCapacity;
-        hash *= (displayInches * prime) + displayInches;
-        hash *= (memoryRom * prime) + memoryRom;
+        hash = (super.getBatteryCapacity() * prime) +
+                super.getBatteryCapacity();
+        hash *= (super.getDisplayInches() * prime) + super.getDisplayInches();
+        hash *= (super.getMemoryRom() * prime) + super.getMemoryRom();
         hash *= (flashMemoryCapacity * prime) + flashMemoryCapacity;
         hash *= (color.getNumber() * prime) + color.getNumber();
 

@@ -1,25 +1,16 @@
-package com.mishamba.day6.model;
+package com.mishamba.day1.model;
 
 
-public class Speakers extends Entity {
-    private int powerConsumption;
+public class Speakers extends PowerConsumption {
     private int numberOfSpeakers;
     private int frequencyRange;
     private int cordLength;
 
     public Speakers(int powerConsumption, int numberOfSpeakers, int frequencyRange, int cordLength) {
-        this.powerConsumption = powerConsumption;
+        super.setPowerConsumption(powerConsumption);
         this.numberOfSpeakers = numberOfSpeakers;
         this.frequencyRange = frequencyRange;
         this.cordLength = cordLength;
-    }
-
-    public int getPowerConsumption() {
-        return powerConsumption;
-    }
-
-    public void setPowerConsumption(int powerConsumption) {
-        this.powerConsumption = powerConsumption;
     }
 
     public int getNumberOfSpeakers() {
@@ -72,7 +63,7 @@ public class Speakers extends Entity {
         int hash;
         int prime = 53;
 
-        hash = (powerConsumption * prime) + powerConsumption;
+        hash = (getPowerConsumption() * prime) + getPowerConsumption();
         hash *= (numberOfSpeakers * prime) + numberOfSpeakers;
         hash *= (frequencyRange * prime) + frequencyRange;
         hash *= (cordLength * prime) + cordLength;

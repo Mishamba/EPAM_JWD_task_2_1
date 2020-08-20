@@ -1,7 +1,6 @@
-package com.mishamba.day6.model;
+package com.mishamba.day1.model;
 
-public class Oven {
-    private int powerConsumption;
+public class Oven extends PowerConsumption {
     private int weight;
     private int capacity;
     private int depth;
@@ -9,20 +8,12 @@ public class Oven {
     private double width;
 
     public Oven(int powerConsumption, int weight, int capacity, int depth, int height, double width) {
-        this.powerConsumption = powerConsumption;
+        super.setPowerConsumption(powerConsumption);
         this.weight = weight;
         this.capacity = capacity;
         this.depth = depth;
         this.height = height;
         this.width = width;
-    }
-
-    public int getPowerConsumption() {
-        return powerConsumption;
-    }
-
-    public void setPowerConsumption(int powerConsumption) {
-        this.powerConsumption = powerConsumption;
     }
 
     public int getWeight() {
@@ -92,7 +83,7 @@ public class Oven {
     public int hashCode() {
         int hash;
         int prime = 32;
-        hash = prime * powerConsumption;
+        hash = prime * getPowerConsumption();
         hash *= prime * weight;
         hash *= prime * capacity;
         hash *= prime * depth;

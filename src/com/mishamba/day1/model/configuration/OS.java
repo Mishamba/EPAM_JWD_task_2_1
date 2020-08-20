@@ -1,4 +1,4 @@
-package com.mishamba.day6.model.configuration;
+package com.mishamba.day1.model.configuration;
 
 public enum OS {
     Linux(1),

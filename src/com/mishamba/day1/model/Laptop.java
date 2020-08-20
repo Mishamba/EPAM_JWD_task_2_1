@@ -1,34 +1,23 @@
-package com.mishamba.day6.model;
+package com.mishamba.day1.model;
 
-import com.mishamba.day6.model.configuration.OS;
+import com.mishamba.day1.model.configuration.OS;
 
-public class Laptop {
-    private int batteryCapacity;
+public class Laptop extends Computer {
     private OS os;
-    private int memoryRom;
     private int systemMemory;
     private float cpu;
-    private int displayInches;
 
     public Laptop(int batteryCapacity, OS os, int memoryRom, int systemMemory, float cpu, int displayInches) {
-        this.batteryCapacity = batteryCapacity;
         this.os = os;
-        this.memoryRom = memoryRom;
         this.systemMemory = systemMemory;
         this.cpu = cpu;
-        this.displayInches = displayInches;
-    }
-
-    public int getBatteryCapacity() {
-        return batteryCapacity;
+        super.setBatteryCapacity(batteryCapacity);
+        super.setMemoryRom(memoryRom);
+        super.setDisplayInches(displayInches);
     }
 
     public OS getOs() {
         return os;
-    }
-
-    public int getMemoryRom() {
-        return memoryRom;
     }
 
     public int getSystemMemory() {
@@ -39,20 +28,8 @@ public class Laptop {
         return cpu;
     }
 
-    public int getDisplayInches() {
-        return displayInches;
-    }
-
-    public void setBatteryCapacity(int batteryCapacity) {
-        this.batteryCapacity = batteryCapacity;
-    }
-
     public void setOs(OS os) {
         this.os = os;
-    }
-
-    public void setMemoryRom(int memoryRom) {
-        this.memoryRom = memoryRom;
     }
 
     public void setSystemMemory(int systemMemory) {
@@ -61,10 +38,6 @@ public class Laptop {
 
     public void setCpu(float cpu) {
         this.cpu = cpu;
-    }
-
-    public void setDisplayInches(int displayInches) {
-        this.displayInches = displayInches;
     }
 
     @Override
@@ -95,12 +68,12 @@ public class Laptop {
         int hash;
         int prime = 43;
 
-        hash = batteryCapacity * prime;
+        hash = super.getBatteryCapacity() * prime;
         hash += os.getNumber() * prime;
-        hash += memoryRom * prime;
+        hash += super.getMemoryRom() * prime;
         hash += systemMemory * prime;
         hash += cpu * prime;
-        hash += displayInches * prime;
+        hash += super.getDisplayInches() * prime;
 
         return hash;
     }

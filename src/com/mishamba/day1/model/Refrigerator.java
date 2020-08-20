@@ -1,36 +1,17 @@
-package com.mishamba.day6.model;
+package com.mishamba.day1.model;
 
-public class Refrigerator {
-    private int powerConsumption;
-    private int weigth;
+public class Refrigerator extends PowerWeightWidth {
     private int freezerCapacity;
     private int overallCapacity;
     private int height;
-    private int width;
 
-    public Refrigerator(int powerConsumption, int weigth, int freezerCapacity, int overallCapacity, int height, int width) {
-        this.powerConsumption = powerConsumption;
-        this.weigth = weigth;
+    public Refrigerator(int powerConsumption, int weight, int freezerCapacity, int overallCapacity, int height, int width) {
+        super.setPowerConsumption(powerConsumption);
+        super.setWeight(weight);
         this.freezerCapacity = freezerCapacity;
         this.overallCapacity = overallCapacity;
         this.height = height;
-        this.width = width;
-    }
-
-    public int getPowerConsumption() {
-        return powerConsumption;
-    }
-
-    public void setPowerConsumption(int powerConsumption) {
-        this.powerConsumption = powerConsumption;
-    }
-
-    public int getWeigth() {
-        return weigth;
-    }
-
-    public void setWeigth(int weigth) {
-        this.weigth = weigth;
+        super.setWidth(width);
     }
 
     public int getFreezerCapacity() {
@@ -57,14 +38,6 @@ public class Refrigerator {
         this.height = height;
     }
 
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -81,7 +54,7 @@ public class Refrigerator {
 
         Refrigerator that = (Refrigerator) o;
         return getPowerConsumption() == that.getPowerConsumption() &&
-                getWeigth() == that.getWeigth() &&
+                super.getWeight() == that.getWeigth() &&
                 getFreezerCapacity() == that.getFreezerCapacity() &&
                 getOverallCapacity() == that.getOverallCapacity() &&
                 getHeight() == that.getHeight() &&
@@ -93,12 +66,12 @@ public class Refrigerator {
         int hash;
         int prime = 53;
 
-        hash = (prime * powerConsumption) + powerConsumption;
-        hash *= (prime * weigth) + weigth;
+        hash = (prime * getPowerConsumption()) + getPowerConsumption();
+        hash *= (prime * getWeight()) + getWeight();
         hash *= (prime * freezerCapacity) + freezerCapacity;
         hash *= (prime * overallCapacity) + overallCapacity;
         hash *= (prime * height) + height;
-        hash *= (prime * width) + width;
+        hash *= (prime * getWidth()) + getWidth();
 
         return hash;
     }

@@ -1,9 +1,8 @@
-package com.mishamba.day6.model;
+package com.mishamba.day1.model;
 
-import com.mishamba.day6.model.configuration.FilterType;
+import com.mishamba.day1.model.configuration.FilterType;
 
-public class VacuumCleaner extends Entity {
-    private int powerConsumption;
+public class VacuumCleaner extends PowerConsumption {
     private FilterType filterType;
     private String bagType;
     private String wandType;
@@ -11,20 +10,12 @@ public class VacuumCleaner extends Entity {
     private int cleaningWidth;
 
     public VacuumCleaner(int powerConsumption, FilterType filterType, String bagType, String wandType, int motorSpeedRegulation, int cleaningWidth) {
-        this.powerConsumption = powerConsumption;
+        super.setPowerConsumption(powerConsumption);
         this.filterType = filterType;
         this.bagType = bagType;
         this.wandType = wandType;
         this.motorSpeedRegulation = motorSpeedRegulation;
         this.cleaningWidth = cleaningWidth;
-    }
-
-    public int getPowerConsumption() {
-        return powerConsumption;
-    }
-
-    public void setPowerConsumption(int powerConsumption) {
-        this.powerConsumption = powerConsumption;
     }
 
     public FilterType getFilterType() {
@@ -95,7 +86,7 @@ public class VacuumCleaner extends Entity {
         int hash;
         int prime = 38;
 
-        hash = (powerConsumption * prime) + powerConsumption;
+        hash = (getPowerConsumption() * prime) + getPowerConsumption();
         hash *= (filterType.getNumber() * prime) + filterType.getNumber();
         hash *= (bagType.hashCode() * prime) + bagType.hashCode();
         hash *= (wandType.hashCode() * prime) + wandType.hashCode();
