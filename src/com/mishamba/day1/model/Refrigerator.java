@@ -1,6 +1,6 @@
 package com.mishamba.day1.model;
 
-public class Refrigerator extends PowerWeightWidth {
+public class Refrigerator extends HouseholdAppliance {
     private int freezerCapacity;
     private int overallCapacity;
     private int height;
@@ -54,7 +54,7 @@ public class Refrigerator extends PowerWeightWidth {
 
         Refrigerator that = (Refrigerator) o;
         return getPowerConsumption() == that.getPowerConsumption() &&
-                super.getWeight() == that.getWeigth() &&
+                super.getWeight() == that.getWeight() &&
                 getFreezerCapacity() == that.getFreezerCapacity() &&
                 getOverallCapacity() == that.getOverallCapacity() &&
                 getHeight() == that.getHeight() &&

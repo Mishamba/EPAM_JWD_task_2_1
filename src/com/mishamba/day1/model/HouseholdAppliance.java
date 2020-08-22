@@ -1,6 +1,6 @@
 package com.mishamba.day1.model;
 
-public class PowerWeightWidth extends PowerConsumption {
+public abstract class HouseholdAppliance extends Consumer {
     private int weight;
     private double width;
 

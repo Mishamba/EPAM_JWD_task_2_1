@@ -1,6 +1,6 @@
 package com.mishamba.day1.model;
 
-public class Computer extends Entity {
+public abstract class Computer extends Appliance {
     private int batteryCapacity;
     private int memoryRom;
     private int displayInches;

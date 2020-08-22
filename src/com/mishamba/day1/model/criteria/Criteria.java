@@ -26,7 +26,7 @@ public enum Criteria {
     FREQUENCY_RANGE("FREQUENCY_RANGE"),
     CORD_LENGTH("CORD_LENGTH");
 
-    private String name;
+    private final String name;
 
     private Criteria(String name) {
         this.name = name;

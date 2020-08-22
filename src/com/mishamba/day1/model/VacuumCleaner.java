@@ -2,7 +2,7 @@ package com.mishamba.day1.model;
 
 import com.mishamba.day1.model.configuration.FilterType;
 
-public class VacuumCleaner extends PowerConsumption {
+public class VacuumCleaner extends Consumer {
     private FilterType filterType;
     private String bagType;
     private String wandType;

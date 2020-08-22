@@ -1,7 +1,7 @@
 package com.mishamba.day1.model;
 
 
-public class Speakers extends PowerConsumption {
+public class Speakers extends Consumer {
     private int numberOfSpeakers;
     private int frequencyRange;
     private int cordLength;

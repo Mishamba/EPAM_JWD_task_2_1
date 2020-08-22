@@ -1,6 +1,6 @@
 package com.mishamba.day1.model;
 
-public class PowerConsumption extends Entity {
+public abstract class Consumer extends Appliance {
     private int powerConsumption;
 
     public int getPowerConsumption() {

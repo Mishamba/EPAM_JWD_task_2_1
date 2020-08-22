@@ -2,11 +2,11 @@ package com.mishamba.day1.model;
 
 import com.mishamba.day1.model.configuration.TablePCColor;
 
-public class TablePC extends Computer {
+public class TabletPC extends Computer {
     private int flashMemoryCapacity;
     private TablePCColor color;
 
-    public TablePC(int batteryCapacity, int displayInches, int memoryRom, int flashMemoryCapacity, TablePCColor color) {
+    public TabletPC(int batteryCapacity, int displayInches, int memoryRom, int flashMemoryCapacity, TablePCColor color) {
         super(displayInches, memoryRom, batteryCapacity);
         this.flashMemoryCapacity = flashMemoryCapacity;
         this.color = color;
@@ -42,7 +42,7 @@ public class TablePC extends Computer {
             return false;
         }
 
-        TablePC tablePC = (TablePC) o;
+        TabletPC tablePC = (TabletPC) o;
         return getBatteryCapacity() == tablePC.getBatteryCapacity() &&
                 getDisplayInches() == tablePC.getDisplayInches() &&
                 getMemoryRom() == tablePC.getMemoryRom() &&

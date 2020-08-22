@@ -1,6 +1,6 @@
 package com.mishamba.day1.model;
 
-public class Oven extends PowerConsumption {
+public class Oven extends Consumer {
     private int weight;
     private int capacity;
     private int depth;

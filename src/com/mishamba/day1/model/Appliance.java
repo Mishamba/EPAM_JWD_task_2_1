@@ -1,4 +1,4 @@
 package com.mishamba.day1.model;
 
-public class Entity {
+public abstract class Appliance {
 }
