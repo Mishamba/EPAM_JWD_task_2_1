@@ -7,7 +7,7 @@ public class Speakers extends Consumer {
     private int cordLength;
 
     public Speakers(int powerConsumption, int numberOfSpeakers, int frequencyRange, int cordLength) {
-        super.setPowerConsumption(powerConsumption);
+        super(powerConsumption);
         this.numberOfSpeakers = numberOfSpeakers;
         this.frequencyRange = frequencyRange;
         this.cordLength = cordLength;

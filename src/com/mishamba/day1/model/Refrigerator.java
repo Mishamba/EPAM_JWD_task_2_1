@@ -3,14 +3,11 @@ package com.mishamba.day1.model;
 public class Refrigerator extends HouseholdAppliance {
     private int freezerCapacity;
     private int overallCapacity;
-    private int height;
 
     public Refrigerator(int powerConsumption, int weight, int freezerCapacity, int overallCapacity, int height, int width) {
-        super.setPowerConsumption(powerConsumption);
-        super.setWeight(weight);
+        super(height, weight, width, powerConsumption);
         this.freezerCapacity = freezerCapacity;
         this.overallCapacity = overallCapacity;
-        this.height = height;
         super.setWidth(width);
     }
 
@@ -28,14 +25,6 @@ public class Refrigerator extends HouseholdAppliance {
 
     public void setOverallCapacity(int overallCapacity) {
         this.overallCapacity = overallCapacity;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
     }
 
     @Override
@@ -70,7 +59,7 @@ public class Refrigerator extends HouseholdAppliance {
         hash *= (prime * getWeight()) + getWeight();
         hash *= (prime * freezerCapacity) + freezerCapacity;
         hash *= (prime * overallCapacity) + overallCapacity;
-        hash *= (prime * height) + height;
+        hash *= (prime * getHeight()) + getHeight();
         hash *= (prime * getWidth()) + getWidth();
 
         return hash;

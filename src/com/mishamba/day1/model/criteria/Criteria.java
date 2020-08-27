@@ -1,38 +1,38 @@
 package com.mishamba.day1.model.criteria;
 
 public enum Criteria {
-    POWER_CONSUMPTION("POWER_CONSUMPTION"),
-    WEIGHT("WEIGHT"),
-    CAPACITY("CAPACITY"),
-    DEPTH("DEPTH"),
-    HEIGHT("HEIGHT"),
-    WIDTH("WIDTH"),
-    BATTERY_CAPACITY("BATTERY_CAPACITY"),
+    POWER_CONSUMPTION("int"),
+    WEIGHT("int"),
+    CAPACITY("int"),
+    DEPTH("int"),
+    HEIGHT("double"),
+    WIDTH("double"),
+    BATTERY_CAPACITY("int"),
     OS("OS"),
-    MEMORY_ROM("MEMORY_ROM"),
-    SYSTEM_MEMORY("SYSTEM_MEMORY"),
-    CPU("CPU"),
-    DISPLAY_INCHES("DISPLAY_INCHES"),
-    FREEZER_CAPACITY("FREEZER_CAPACITY"),
-    OVERALL_CAPACITY("OVERALL_CAPACITY"),
-    FILTER_TYPE("FILTER_TYPE"),
-    BAG_TYPE("BAG_TYPE"),
-    WAND_TYPE("WAND_TYPE"),
-    MOTOR_SPEED_REGULATION("MOTOR_SPEED_REGULATION"),
-    CLEANING_WIDTH("CLEANING_WIDTH"),
-    FLASH_MEMORY_CAPACITY("FLASH_MEMORY_CAPACITY"),
-    COLOR("COLOR"),
-    NUMBER_OF_SPEAKERS("NUMBER_OF_SPEAKERS"),
-    FREQUENCY_RANGE("FREQUENCY_RANGE"),
-    CORD_LENGTH("CORD_LENGTH");
+    MEMORY_ROM("int"),
+    SYSTEM_MEMORY("int"),
+    CPU("float"),
+    DISPLAY_INCHES("int"),
+    FREEZER_CAPACITY("int"),
+    OVERALL_CAPACITY("int"),
+    FILTER_TYPE("FilterType"),
+    CORD_LENGTH("int"),
+    BAG_TYPE("String"),
+    WAND_TYPE("String"),
+    MOTOR_SPEED_REGULATION("int"),
+    CLEANING_WIDTH("int"),
+    FLASH_MEMORY_CAPACITY("int"),
+    COLOR("TablePCColor"),
+    NUMBER_OF_SPEAKERS("int"),
+    FREQUENCY_RANGE("int");
 
-    private final String name;
+    private String type;
 
-    private Criteria(String name) {
-        this.name = name;
+    Criteria(String type) {
+        this.type = type;
     }
 
-    public String getName() {
-        return name;
+    public String getType() {
+        return type;
     }
 }

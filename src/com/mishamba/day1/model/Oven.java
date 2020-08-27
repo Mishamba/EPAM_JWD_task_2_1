@@ -1,27 +1,13 @@
 package com.mishamba.day1.model;
 
-public class Oven extends Consumer {
-    private int weight;
+public class Oven extends HouseholdAppliance {
     private int capacity;
     private int depth;
-    private int height;
-    private double width;
 
     public Oven(int powerConsumption, int weight, int capacity, int depth, int height, double width) {
-        super.setPowerConsumption(powerConsumption);
-        this.weight = weight;
+        super(height, weight, width ,powerConsumption);
         this.capacity = capacity;
         this.depth = depth;
-        this.height = height;
-        this.width = width;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
     }
 
     public int getCapacity() {
@@ -38,22 +24,6 @@ public class Oven extends Consumer {
 
     public void setDepth(int depth) {
         this.depth = depth;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public double getWidth() {
-        return width;
-    }
-
-    public void setWidth(double width) {
-        this.width = width;
     }
 
     @Override
@@ -84,11 +54,11 @@ public class Oven extends Consumer {
         int hash;
         int prime = 32;
         hash = prime * getPowerConsumption();
-        hash *= prime * weight;
+        hash *= prime * getWeight();
         hash *= prime * capacity;
         hash *= prime * depth;
-        hash *= prime * height;
-        hash *= prime * width;
+        hash *= prime * getHeight();
+        hash *= prime * getWidth();
 
         return hash;
     }

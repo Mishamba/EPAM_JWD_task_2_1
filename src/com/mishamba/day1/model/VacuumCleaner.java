@@ -10,7 +10,7 @@ public class VacuumCleaner extends Consumer {
     private int cleaningWidth;
 
     public VacuumCleaner(int powerConsumption, FilterType filterType, String bagType, String wandType, int motorSpeedRegulation, int cleaningWidth) {
-        super.setPowerConsumption(powerConsumption);
+        super(powerConsumption);
         this.filterType = filterType;
         this.bagType = bagType;
         this.wandType = wandType;
