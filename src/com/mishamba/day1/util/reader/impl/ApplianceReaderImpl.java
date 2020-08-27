@@ -31,6 +31,17 @@ public class ApplianceReaderImpl implements ApplianceReader {
         }
     }
 
+    public boolean hasNewLine() throws UtilException {
+        try {
+            bufferedReader.mark(1);
+            String line = bufferedReader.readLine();
+            bufferedReader.reset();
+            return line != null;
+        } catch (IOException exception) {
+            throw new UtilException(exception);
+        }
+    }
+
     @Override
     public String readString() throws UtilException {
         try {
