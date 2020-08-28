@@ -6,7 +6,8 @@ public class TabletPC extends Computer {
     private int flashMemoryCapacity;
     private TablePCColor color;
 
-    public TabletPC(int batteryCapacity, int displayInches, int memoryRom, int flashMemoryCapacity, TablePCColor color) {
+    public TabletPC(int batteryCapacity, int displayInches, int memoryRom,
+                    int flashMemoryCapacity, TablePCColor color) {
         super(displayInches, memoryRom, batteryCapacity);
         this.flashMemoryCapacity = flashMemoryCapacity;
         this.color = color;

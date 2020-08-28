@@ -4,7 +4,8 @@ public class Oven extends HouseholdAppliance {
     private int capacity;
     private int depth;
 
-    public Oven(int powerConsumption, int weight, int capacity, int depth, int height, double width) {
+    public Oven(int powerConsumption, int weight, int capacity, int depth,
+                int height, double width) {
         super(height, weight, width ,powerConsumption);
         this.capacity = capacity;
         this.depth = depth;

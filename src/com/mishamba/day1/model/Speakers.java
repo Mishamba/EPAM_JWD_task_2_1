@@ -6,7 +6,8 @@ public class Speakers extends Consumer {
     private int frequencyRange;
     private int cordLength;
 
-    public Speakers(int powerConsumption, int numberOfSpeakers, int frequencyRange, int cordLength) {
+    public Speakers(int powerConsumption, int numberOfSpeakers,
+                    int frequencyRange, int cordLength) {
         super(powerConsumption);
         this.numberOfSpeakers = numberOfSpeakers;
         this.frequencyRange = frequencyRange;

@@ -9,6 +9,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ClassCriteriaMatcherImpl implements ClassCriteriaMatcher {
+    private static ClassCriteriaMatcherImpl instance;
+
+    private ClassCriteriaMatcherImpl() {
+    }
+
+    public static ClassCriteriaMatcherImpl getInstance() {
+        if (instance == null) {
+            instance = new ClassCriteriaMatcherImpl();
+        }
+
+        return instance;
+    }
+
     private static final String CLASS_REG_EX = "^\\w+";
     private static final String CRITERIA_REG_EX_BEGIN = "(?<=";
     private static final String CRITERIA_REG_EX_END = "=)(\\d+\\W\\d+|\\d+)";

@@ -7,7 +7,8 @@ public class Laptop extends Computer {
     private int systemMemory;
     private float cpu;
 
-    public Laptop(int batteryCapacity, OS os, int memoryRom, int systemMemory, float cpu, int displayInches) {
+    public Laptop(int batteryCapacity, OS os, int memoryRom, int systemMemory,
+                  float cpu, int displayInches) {
         super(displayInches, memoryRom, batteryCapacity);
         this.os = os;
         this.systemMemory = systemMemory;

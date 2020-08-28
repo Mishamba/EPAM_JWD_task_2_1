@@ -6,26 +6,26 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public class ApplianceReaderImpl implements ApplianceReader {
+    private static final String DIRECTORY_PATH = "src/resources";
+    private static final String FILE_NAME = "appliances.txt";
     private final BufferedReader bufferedReader;
 
     public static class ApplianceReaderImplFactory {
         private ApplianceReaderImplFactory() {
         }
 
-        @Contract("_ -> new")
-        public static @NotNull ApplianceReaderImpl createReader(File file)
+        public static @NotNull ApplianceReaderImpl createReader()
                 throws UtilException {
-            return new ApplianceReaderImpl(file);
+            return new ApplianceReaderImpl();
         }
     }
 
-    private ApplianceReaderImpl(@NotNull File file) throws UtilException {
+    private ApplianceReaderImpl() throws UtilException {
         try {
-            this.bufferedReader = new BufferedReader(new FileReader(file.getAbsolutePath()));
+            this.bufferedReader = new BufferedReader(new FileReader(
+                    new File(DIRECTORY_PATH, FILE_NAME)));
         } catch (FileNotFoundException exception) {
             throw new UtilException(exception.toString());
         }

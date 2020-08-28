@@ -29,7 +29,7 @@ public class FileServiceImpl implements FileService {
     public ArrayList<Appliance> findBy(@NotNull Criteria criteria) throws ServiceException {
         FileDAOImpl dao = FileDAOImpl.getInstance();
         try {
-            return dao.findBy(criteria.getName());
+            return dao.findBy(criteria);
         } catch (DAOException exception) {
             throw new ServiceException(exception);
         }

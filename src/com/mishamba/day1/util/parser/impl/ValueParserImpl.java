@@ -1,6 +1,7 @@
 package com.mishamba.day1.util.parser.impl;
 
 import com.mishamba.day1.model.configuration.FilterType;
+import com.mishamba.day1.model.configuration.OS;
 import com.mishamba.day1.model.configuration.TablePCColor;
 import com.mishamba.day1.util.exception.UtilException;
 import com.mishamba.day1.util.parser.ValueParser;
@@ -48,6 +49,14 @@ public class ValueParserImpl implements ValueParser {
             return FilterType.valueOf(string);
         } catch (IllegalArgumentException | NullPointerException exception) {
             throw new UtilException(exception.toString());
+        }
+    }
+
+    public OS parseOS(String string) throws UtilException {
+        try {
+            return OS.valueOf(string);
+        } catch (IllegalArgumentException | NullPointerException exception) {
+            throw new UtilException(exception);
         }
     }
 }

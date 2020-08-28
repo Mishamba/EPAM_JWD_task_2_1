@@ -4,7 +4,8 @@ public class Refrigerator extends HouseholdAppliance {
     private int freezerCapacity;
     private int overallCapacity;
 
-    public Refrigerator(int powerConsumption, int weight, int freezerCapacity, int overallCapacity, int height, int width) {
+    public Refrigerator(int powerConsumption, int weight, int freezerCapacity,
+                        int overallCapacity, int height, int width) {
         super(height, weight, width, powerConsumption);
         this.freezerCapacity = freezerCapacity;
         this.overallCapacity = overallCapacity;
