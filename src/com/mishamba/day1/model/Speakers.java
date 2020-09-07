@@ -1,13 +1,15 @@
 package com.mishamba.day1.model;
 
 
+import com.mishamba.day1.model.configuration.FrequencyRange;
+
 public class Speakers extends Consumer {
     private int numberOfSpeakers;
-    private int frequencyRange;
+    private FrequencyRange frequencyRange;
     private int cordLength;
 
     public Speakers(int powerConsumption, int numberOfSpeakers,
-                    int frequencyRange, int cordLength) {
+                    FrequencyRange frequencyRange, int cordLength) {
         super(powerConsumption);
         this.numberOfSpeakers = numberOfSpeakers;
         this.frequencyRange = frequencyRange;
@@ -22,11 +24,11 @@ public class Speakers extends Consumer {
         this.numberOfSpeakers = numberOfSpeakers;
     }
 
-    public int getFrequencyRange() {
+    public FrequencyRange getFrequencyRange() {
         return frequencyRange;
     }
 
-    public void setFrequencyRange(int frequencyRange) {
+    public void setFrequencyRange(FrequencyRange frequencyRange) {
         this.frequencyRange = frequencyRange;
     }
 
@@ -66,7 +68,10 @@ public class Speakers extends Consumer {
 
         hash = (getPowerConsumption() * prime) + getPowerConsumption();
         hash *= (numberOfSpeakers * prime) + numberOfSpeakers;
-        hash *= (frequencyRange * prime) + frequencyRange;
+        hash *= (frequencyRange.getLeftBorder() * prime) +
+                frequencyRange.getLeftBorder();
+        hash *= (frequencyRange.getRightBorder() * prime) +
+                frequencyRange.getRightBorder();
         hash *= (cordLength * prime) + cordLength;
 
         return hash;

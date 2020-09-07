@@ -1,6 +1,7 @@
 package com.mishamba.day1.util.parser.impl;
 
 import com.mishamba.day1.model.configuration.FilterType;
+import com.mishamba.day1.model.configuration.FrequencyRange;
 import com.mishamba.day1.model.configuration.OS;
 import com.mishamba.day1.model.configuration.TablePCColor;
 import com.mishamba.day1.util.exception.UtilException;
@@ -52,6 +53,7 @@ public class ValueParserImpl implements ValueParser {
         }
     }
 
+    @Override
     public OS parseOS(String string) throws UtilException {
         try {
             return OS.valueOf(string);

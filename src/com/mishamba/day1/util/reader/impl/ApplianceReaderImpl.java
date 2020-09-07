@@ -2,13 +2,12 @@ package com.mishamba.day1.util.reader.impl;
 
 import com.mishamba.day1.util.reader.ApplianceReader;
 import com.mishamba.day1.util.exception.UtilException;
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 
 public class ApplianceReaderImpl implements ApplianceReader {
-    private static final String DIRECTORY_PATH = "src/resources";
+    private static final String DIRECTORY_PATH = "/home/mishamba/java/EPAM_JWD_task_2_1/src/resources";
     private static final String FILE_NAME = "appliances.txt";
     private final BufferedReader bufferedReader;
 

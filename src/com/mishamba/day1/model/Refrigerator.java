@@ -2,10 +2,10 @@ package com.mishamba.day1.model;
 
 public class Refrigerator extends HouseholdAppliance {
     private int freezerCapacity;
-    private int overallCapacity;
+    private double overallCapacity;
 
     public Refrigerator(int powerConsumption, int weight, int freezerCapacity,
-                        int overallCapacity, int height, int width) {
+                        double overallCapacity, double height, int width) {
         super(height, weight, width, powerConsumption);
         this.freezerCapacity = freezerCapacity;
         this.overallCapacity = overallCapacity;
@@ -20,11 +20,11 @@ public class Refrigerator extends HouseholdAppliance {
         this.freezerCapacity = freezerCapacity;
     }
 
-    public int getOverallCapacity() {
+    public double getOverallCapacity() {
         return overallCapacity;
     }
 
-    public void setOverallCapacity(int overallCapacity) {
+    public void setOverallCapacity(double overallCapacity) {
         this.overallCapacity = overallCapacity;
     }
 

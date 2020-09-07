@@ -10,6 +10,19 @@ import com.mishamba.day1.service.impl.FileServiceImpl;
 import java.util.ArrayList;
 
 public class ControllerImpl implements Controller {
+    private ControllerImpl() {
+    }
+
+    public static class ControllerImplHolder {
+        private ControllerImplHolder() {
+        }
+
+        private static final ControllerImpl HOLDER_INSTANCE = new ControllerImpl();
+    }
+
+    public static ControllerImpl getInstance() {
+        return ControllerImplHolder.HOLDER_INSTANCE;
+    }
 
     @Override
     public ArrayList<Appliance> find(String stringCriteria) throws ControllerException {
