@@ -32,9 +32,11 @@ public class FileDAOImpl implements FileDAO {
                     ApplianceReaderImpl.ApplianceReaderImplFactory.
                             createReader();
             while(reader.hasNewLine()) {
-                String line = reader.readString();
-                Appliance newAppliance = ApplianceCreatorImpl.getInstance().createAppliance(line);
-                appliances.add(newAppliance);
+                String line = reader.readString(criteria);
+                if (line != null) {
+                    Appliance newAppliance = ApplianceCreatorImpl.getInstance().createAppliance(line);
+                    appliances.add(newAppliance);
+                }
             }
 
             return appliances;

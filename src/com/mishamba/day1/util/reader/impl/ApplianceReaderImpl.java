@@ -1,5 +1,6 @@
 package com.mishamba.day1.util.reader.impl;
 
+import com.mishamba.day1.model.criteria.Criteria;
 import com.mishamba.day1.util.reader.ApplianceReader;
 import com.mishamba.day1.util.exception.UtilException;
 import org.jetbrains.annotations.NotNull;
@@ -8,7 +9,7 @@ import java.io.*;
 
 public class ApplianceReaderImpl implements ApplianceReader {
     private static final String DIRECTORY_PATH = "/home/mishamba/java/EPAM_JWD_task_2_1/src/resources";
-    private static final String FILE_NAME = "appliances.txt";
+    private static final String FILE_NAME = "appliances_db.txt";
     private final BufferedReader bufferedReader;
 
     public static class ApplianceReaderImplFactory {
@@ -42,9 +43,10 @@ public class ApplianceReaderImpl implements ApplianceReader {
     }
 
     @Override
-    public String readString() throws UtilException {
+    public String readString(@NotNull Criteria criteria) throws UtilException {
         try {
-            return bufferedReader.readLine();
+            String line = bufferedReader.readLine();
+            return (line.matches(criteria.name())) ? line : null;
         } catch (IOException exception) {
             throw new UtilException(exception.toString());
         }
