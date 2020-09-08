@@ -7,10 +7,12 @@ import com.mishamba.day1.model.criteria.Criteria;
 import com.mishamba.day1.util.factory.impl.ApplianceCreatorImpl;
 import com.mishamba.day1.util.exception.UtilException;
 import com.mishamba.day1.util.reader.impl.ApplianceReaderImpl;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 
 public class FileDAOImpl implements FileDAO {
+    private static final Logger logger = Logger.getRootLogger();
     private static FileDAOImpl instance;
 
     private FileDAOImpl() {
@@ -34,7 +36,9 @@ public class FileDAOImpl implements FileDAO {
             while(reader.hasNewLine()) {
                 String line = reader.readString(criteria);
                 if (line != null) {
-                    Appliance newAppliance = ApplianceCreatorImpl.getInstance().createAppliance(line);
+                    logger.info("line doesn't contains criteria");
+                    Appliance newAppliance = ApplianceCreatorImpl.
+                            getInstance().createAppliance(line);
                     appliances.add(newAppliance);
                 }
             }

@@ -6,13 +6,14 @@ import com.mishamba.day1.model.Appliance;
 import com.mishamba.day1.model.criteria.Criteria;
 import com.mishamba.day1.service.FileService;
 import com.mishamba.day1.service.exception.ServiceException;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public class FileServiceImpl implements FileService {
-
     private static FileServiceImpl instance;
+    private static final Logger logger = Logger.getRootLogger();
 
     private FileServiceImpl() {
     }
@@ -31,6 +32,7 @@ public class FileServiceImpl implements FileService {
         try {
             return dao.findBy(criteria);
         } catch (DAOException exception) {
+            logger.error("got exception in Service");
             throw new ServiceException(exception);
         }
     }

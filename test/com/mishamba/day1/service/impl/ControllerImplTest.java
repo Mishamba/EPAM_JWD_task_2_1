@@ -1,6 +1,5 @@
 package com.mishamba.day1.service.impl;
 
-import com.mishamba.day1.controller.Controller;
 import com.mishamba.day1.controller.exception.ControllerException;
 import com.mishamba.day1.controller.impl.ControllerImpl;
 import com.mishamba.day1.model.Appliance;

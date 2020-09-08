@@ -24,7 +24,8 @@ public class ApplianceCreatorImpl implements ApplianceCreator {
     @Override
     public Appliance createAppliance(String line) throws UtilException {
         ApplianceCreator creator = provider.defineCreator(
-                ClassCriteriaMatcherImpl.getInstance().matchClassName(line));
+                ClassCriteriaMatcherImpl.getInstance().matchClassName(line).
+                        toUpperCase());
         return creator.createAppliance(line);
     }
 }

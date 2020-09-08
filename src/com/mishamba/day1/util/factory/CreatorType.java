@@ -10,7 +10,7 @@ public enum CreatorType {
     TABLET_PC(new TabletPCCreator()),
     SPEAKERS(new SpeakersCreator());
 
-    private ApplianceCreator creator;
+    private final ApplianceCreator creator;
 
     CreatorType(ApplianceCreator creator) {
         this.creator = creator;

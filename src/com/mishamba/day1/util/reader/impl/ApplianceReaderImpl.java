@@ -3,6 +3,7 @@ package com.mishamba.day1.util.reader.impl;
 import com.mishamba.day1.model.criteria.Criteria;
 import com.mishamba.day1.util.reader.ApplianceReader;
 import com.mishamba.day1.util.exception.UtilException;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
@@ -10,6 +11,7 @@ import java.io.*;
 public class ApplianceReaderImpl implements ApplianceReader {
     private static final String DIRECTORY_PATH = "/home/mishamba/java/EPAM_JWD_task_2_1/src/resources";
     private static final String FILE_NAME = "appliances_db.txt";
+    private static final Logger logger = Logger.getRootLogger();
     private final BufferedReader bufferedReader;
 
     public static class ApplianceReaderImplFactory {
@@ -38,17 +40,20 @@ public class ApplianceReaderImpl implements ApplianceReader {
             bufferedReader.reset();
             return line != null;
         } catch (IOException exception) {
+            logger.error("hash new line method");
             throw new UtilException(exception);
         }
     }
 
     @Override
     public String readString(@NotNull Criteria criteria) throws UtilException {
+        logger.info("checking line with this criteria");
         try {
             String line = bufferedReader.readLine();
-            return (line.matches(criteria.name())) ? line : null;
+            logger.info("read this line" + "\n" + line);
+            return (line.matches("(.*)" + criteria.name() + "(.*)")) ? line : null;
         } catch (IOException exception) {
-            throw new UtilException(exception.toString());
+            throw new UtilException("read string method",exception);
         }
     }
 }

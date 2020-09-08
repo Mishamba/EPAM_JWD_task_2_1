@@ -1,18 +1,21 @@
 package com.mishamba.day1.util.parser.impl;
 
 import com.mishamba.day1.model.configuration.FilterType;
-import com.mishamba.day1.model.configuration.FrequencyRange;
 import com.mishamba.day1.model.configuration.OS;
 import com.mishamba.day1.model.configuration.TablePCColor;
 import com.mishamba.day1.util.exception.UtilException;
 import com.mishamba.day1.util.parser.ValueParser;
+import org.apache.log4j.Logger;
 
 public class ValueParserImpl implements ValueParser {
+    private static final Logger logger = Logger.getRootLogger();
+
     @Override
     public int parseInt(String string) throws UtilException {
         try {
             return Integer.parseInt(string);
         } catch (NumberFormatException exception) {
+            logger.error("parse Int method");
             throw new UtilException(exception.toString());
         }
     }
@@ -22,6 +25,7 @@ public class ValueParserImpl implements ValueParser {
         try {
             return Float.parseFloat(string);
         } catch (NumberFormatException exception) {
+            logger.error("parse Float method");
             throw new UtilException(exception.toString());
         }
     }
@@ -31,6 +35,7 @@ public class ValueParserImpl implements ValueParser {
         try {
             return Double.parseDouble(string);
         } catch (NumberFormatException exception) {
+            logger.error("parse double method");
             throw new UtilException(exception.toString());
         }
     }
@@ -40,6 +45,7 @@ public class ValueParserImpl implements ValueParser {
         try {
             return TablePCColor.valueOf(string);
         } catch (IllegalArgumentException | NullPointerException exception) {
+            logger.error("parse color method");
             throw new UtilException(exception.toString());
         }
     }
@@ -49,6 +55,7 @@ public class ValueParserImpl implements ValueParser {
         try {
             return FilterType.valueOf(string);
         } catch (IllegalArgumentException | NullPointerException exception) {
+            logger.error("parse filter type method");
             throw new UtilException(exception.toString());
         }
     }
@@ -58,6 +65,7 @@ public class ValueParserImpl implements ValueParser {
         try {
             return OS.valueOf(string);
         } catch (IllegalArgumentException | NullPointerException exception) {
+            logger.error("parse os method");
             throw new UtilException(exception);
         }
     }
